@@ -1,6 +1,7 @@
 # Groq-Powered Real-Time Voice Assistant with Next.Js neets deepgram
 
 Voice-driven interactions with groq, a real-time voice assistant that seamlessly blends Next.js for web functionality, Groq for LLM, Deepgram for live transcription TTS with Neets for TTS. [Next.js](https://nextjs.org/)  [Deepgram](https://deepgram.com/) [Groq](https://groq.com/) [Neets](https://neets.ai/).
+[groq.webm](https://github.com/serkandyck/realtime-voice-assistant-groq/assets/12444059/f2823fcb-d42f-4901-be17-f61d6e38e1c0)
 
 ## Quickstart
 
