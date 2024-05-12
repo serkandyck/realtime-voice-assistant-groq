@@ -161,7 +161,7 @@ export default function Microphone() {
                     content: caption,
                   }
                 ],
-                model: "mixtral-8x7b-32768",
+                model: "Llama3-70b-8192",
               })
               .then((chatCompletion) => {
                 if (neetsApiKey) {
