@@ -168,9 +168,9 @@ export default function Microphone() {
                   setCaption(chatCompletion.choices[0]?.message?.content || "");
                   axios.post("https://api.neets.ai/v1/tts", {
                       text: chatCompletion.choices[0]?.message?.content || "",
-                      voice_id: 'us-female-2',
+                      voice_id: 'kevin-hart',
                       params: {
-                        model: 'style-diff-500'
+                        model: 'ar-diff-50k'
                       }
                     },
                     {
