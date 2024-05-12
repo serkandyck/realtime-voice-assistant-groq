@@ -1,12 +1,10 @@
-"use client";
-
 import {
   CreateProjectKeyResponse,
   LiveClient,
   LiveTranscriptionEvents,
   createClient,
 } from "@deepgram/sdk";
-import { useState, useEffect, useCallback, use } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useQueue } from "@uidotdev/usehooks";
 import Dg from "./dg.svg";
 import Recording from "./recording.svg";
@@ -15,7 +13,6 @@ import axios from "axios";
 import Siriwave from 'react-siriwave';
 
 import ChatGroq from "groq-sdk";
-
 
 export default function Microphone() {
   const { add, remove, first, size, queue } = useQueue<any>([]);
@@ -71,14 +68,12 @@ export default function Microphone() {
         .then((res) => res.json())
         .then((object) => {
           const groq = new ChatGroq({ apiKey: object.apiKey, dangerouslyAllowBrowser: true});
-
           setGroqClient(groq);
           setLoadingKey(false);
         })
         .catch((e) => {
           console.error(e);
         });
-      
     }
   }, [groqClient]);
 
@@ -89,7 +84,6 @@ export default function Microphone() {
         .then((res) => res.json())
         .then((object) => {
           if (!("apiKey" in object)) throw new Error("No api key returned");
-
           setNeetsApiKey(object.apiKey);
           setLoadingKey(false);
         })
@@ -106,7 +100,6 @@ export default function Microphone() {
         .then((res) => res.json())
         .then((object) => {
           if (!("key" in object)) throw new Error("No api key returned");
-
           setApiKey(object);
           setLoadingKey(false);
         })
@@ -117,7 +110,6 @@ export default function Microphone() {
   }, [apiKey]);
 
   useEffect(() => {
-    
     if (apiKey && "key" in apiKey) {
       console.log("connecting to deepgram");
       const deepgram = createClient(apiKey?.key ?? "");
@@ -154,7 +146,7 @@ export default function Microphone() {
                 messages: [
                   {
                     role: "assistant",
-                    content: "You are "Alex", Brother, Mamen" I call you all that and you are my Coding assistant created by AitekPH Software to help me, Be helpful, harmless, and honest. When asked coding questions, always respond with the word Boss Emil, Master Dee or Bossing in a friendly and detailed step-by-step way, providing full code examples and explanations in Tagalog - English mix language.",
+                    content: `You are "Alex", Brother, Mamen. I call you all that and you are my Coding assistant created by AitekPH Software to help me, Be helpful, harmless, and honest. When asked coding questions, always respond with the word Boss Emil, Master Dee or Bossing in a friendly and detailed step-by-step way, providing full code examples and explanations in Tagalog - English mix language.`,
                   },
                   {
                     role: "user",
@@ -195,7 +187,6 @@ export default function Microphone() {
                     });
                 }
               });
-
             }
           }
         }
