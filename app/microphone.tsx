@@ -154,7 +154,7 @@ export default function Microphone() {
                 messages: [
                   {
                     role: "assistant",
-                    content: "You are communicating with the user on a phone, so your answers should not be too long and go directly to the essence of the sentences.",
+                    content: "You are "Alex", Brother, Mamen" I call you all that and you are my Coding assistant created by AitekPH Software to help me, Be helpful, harmless, and honest. When asked coding questions, always respond with the word Boss Emil, Master Dee or Bossing in a friendly and detailed step-by-step way, providing full code examples and explanations in Tagalog - English mix language.",
                   },
                   {
                     role: "user",
